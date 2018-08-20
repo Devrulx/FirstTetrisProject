@@ -14,15 +14,18 @@ namespace Tetris
     {
         Bitmap Buffer;
         Graphics BuffersGraphics;
-        Block[,] blocks; 
+        private Block[,] blocks;
+
         public TetrisWindow()
         {
             InitializeComponent();
-            blocks = new Block[10, 20];
+            Blocks = new Block[10, 20];
             prepareBoard();
             Buffer = new Bitmap(Width, Height);
             BuffersGraphics = Graphics.FromImage(Buffer);
         }
+
+        internal Block[,] Blocks { get => blocks; set => blocks = value; }
 
         public void prepareBoard()
         { //initialises/resets board
@@ -30,7 +33,7 @@ namespace Tetris
             {
                 for (int y = 0 ; y < 20 ; y++)
                 {
-                    blocks[x, y] = new Block();
+                    Blocks[x, y] = new Block();
                 }
             }
         }
@@ -44,7 +47,7 @@ namespace Tetris
             {
                 for (int y = 0 ; y < 20 ; y++)
                 {
-                    tempblock = blocks[x, y];
+                    tempblock = Blocks[x, y];
                     if (tempblock.getFilled())
                     {
                         BuffersGraphics.FillRectangle(tempblock.getColor(), x * (Width / 10), y * (Height / 10), Width / 10, Height / 20);
