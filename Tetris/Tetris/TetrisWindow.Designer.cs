@@ -1,13 +1,13 @@
 ﻿namespace Tetris
 {
-    partial class Form1
+    partial class TetrisWindow
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,39 +20,27 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.tetrisWindow1 = new Tetris.TetrisWindow();
             this.SuspendLayout();
             // 
-            // tetrisWindow1
-            // 
-            this.tetrisWindow1.Location = new System.Drawing.Point(27, 27);
-            this.tetrisWindow1.Name = "tetrisWindow1";
-            this.tetrisWindow1.Size = new System.Drawing.Size(202, 402);
-            this.tetrisWindow1.TabIndex = 0;
-            // 
-            // Form1
+            // TetrisWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 463);
-            this.Controls.Add(this.tetrisWindow1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "TetrisWindow";
+            this.Size = new System.Drawing.Size(202, 402);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TetrisWindow_Paint);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private TetrisWindow tetrisWindow1;
     }
 }
-
