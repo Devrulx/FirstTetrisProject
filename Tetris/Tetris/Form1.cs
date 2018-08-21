@@ -13,7 +13,7 @@ namespace Tetris
     public partial class Form1 : Form
     {
         bool pieceDropping = false;
-        Piece currentDrop; 
+        Piece droppingPiece = new Piece();
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +29,30 @@ namespace Tetris
             if (!pieceDropping)
             {
                 pieceDropping = true;
+                switch (droppingPiece.generateNextPiece())
+                {
+                    case Piece.PieceType.I:
 
+                        break;
+                    case Piece.PieceType.J:
+
+                        break;
+                    case Piece.PieceType.L:
+
+                        break;
+                    case Piece.PieceType.O:
+
+                        break;
+                    case Piece.PieceType.S:
+
+                        break;
+                    case Piece.PieceType.T:
+
+                        break;
+                    case Piece.PieceType.Z:
+
+                        break;
+                }
             }
 
         }

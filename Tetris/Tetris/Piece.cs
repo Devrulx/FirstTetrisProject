@@ -13,6 +13,7 @@ namespace Tetris
         Random randomGenerator;
         private PieceType typeOfPiece;
         string pieceHistory;
+        public Point location;
         public Piece()
         {
             randomGenerator = new Random();
