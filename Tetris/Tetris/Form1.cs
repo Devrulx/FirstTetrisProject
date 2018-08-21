@@ -28,31 +28,10 @@ namespace Tetris
         {
             if (!pieceDropping)
             {
-                pieceDropping = true;
-                switch (droppingPiece.generateNextPiece())
-                {
-                    case Piece.PieceType.I:
+                droppingPiece.setPieceType(droppingPiece.generateNextPiece());
+            } else
+            {
 
-                        break;
-                    case Piece.PieceType.J:
-
-                        break;
-                    case Piece.PieceType.L:
-
-                        break;
-                    case Piece.PieceType.O:
-
-                        break;
-                    case Piece.PieceType.S:
-
-                        break;
-                    case Piece.PieceType.T:
-
-                        break;
-                    case Piece.PieceType.Z:
-
-                        break;
-                }
             }
 
         }

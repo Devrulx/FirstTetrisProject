@@ -60,7 +60,7 @@ namespace Tetris
         }
 
         public bool checkCollision(Block[,] Board)
-        { // checks for any pieces that are marked as falling, then checks if they are at the bottom or if there is a piece below it.
+        { // changed things, this wont work anymore, pls ignore.
             for (int x = 0 ; x < 10 ; x++)
             {
                 for (int y = 0 ; y < 20 ; y++)
@@ -75,6 +75,16 @@ namespace Tetris
                 }
             }
             return false;
+        }
+
+        public void setPieceType(PieceType type)
+        {
+            typeOfPiece = type;
+        }
+
+        public PieceType getPieceType()
+        {
+            return typeOfPiece;
         }
 
         public enum PieceType

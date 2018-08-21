@@ -22,7 +22,7 @@ namespace Tetris
             Blocks = new Block[10, 20];
             prepareBoard();
             Buffer = new Bitmap(Width, Height);
-            BuffersGraphics = Graphics.FromImage(Buffer);
+            BuffersGraphics = Graphics.FromImage(Buffer); 
         }
 
         internal Block[,] Blocks { get => blocks; set => blocks = value; }
