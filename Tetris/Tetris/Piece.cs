@@ -9,9 +9,10 @@ namespace Tetris
 {
     class Piece
     {
+        PieceType pieceGeneratorPlaceholder;
         Random randomGenerator;
         private PieceType typeOfPiece;
-
+        string pieceHistory;
         public Piece()
         {
             randomGenerator = new Random();
@@ -40,8 +41,21 @@ namespace Tetris
         }
 
         public PieceType generateNextPiece()
-        {// TODO add piece generation http://tetris.wikia.com/wiki/Random_Generator
-            return (PieceType)randomGenerator.Next(0, 6);
+        { // Generates next piece, via a 7-piece "bag" 
+            bool success = false;
+            do
+            {
+                pieceGeneratorPlaceholder = (PieceType)randomGenerator.Next(0, 6);
+                if (!pieceHistory.Contains(pieceGeneratorPlaceholder.ToString()))
+                {
+                    success = true;
+                }
+            } while (!success);
+            if (pieceHistory.Length == 7)
+            {
+                pieceHistory = "";
+            }
+            return pieceGeneratorPlaceholder;
         }
 
         public bool checkCollision(Block[,] Board)
