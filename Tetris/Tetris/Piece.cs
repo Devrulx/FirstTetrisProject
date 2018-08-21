@@ -11,7 +11,6 @@ namespace Tetris
     {
         Random randomGenerator;
         private PieceType typeOfPiece;
-        private byte rotationStage = 0;
 
         public Piece()
         {
@@ -45,11 +44,20 @@ namespace Tetris
             return (PieceType)randomGenerator.Next(0, 6);
         }
 
-        public bool checkCollision(Block[,] Board, Piece piece, byte rotationState, Point position)
-        { // TODO finish collision
-            for (int x = 0 ; x < 4 ; x++)
+        public bool checkCollision(Block[,] Board)
+        { // checks for any pieces that are marked as falling, then checks if they are at the bottom or if there is a piece below it.
+            for (int x = 0 ; x < 10 ; x++)
             {
-
+                for (int y = 0 ; y < 20 ; y++)
+                {
+                    if (Board[x, y].getFalling())
+                    {
+                        if (y == 19 || Board[x, y + 1].getFilled())
+                        {
+                            return true;
+                        }
+                    }
+                }
             }
             return false;
         }

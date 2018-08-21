@@ -11,6 +11,7 @@ namespace Tetris
     {
         private Brush fillcolor = Brushes.Transparent; // the color of the block
         private bool filled = false; // whether or not the block is currently filled with a piece or not
+        private bool falling = false;
 
         // variable assignment/retrieval methods
         public void setColor(Brush B)
@@ -33,5 +34,13 @@ namespace Tetris
             return filled;
         }
 
+        public void setFalling(bool F)
+        {
+            falling = F;
+        }
+        public bool getFalling()
+        {
+            return falling;
+        }
     }
 }
